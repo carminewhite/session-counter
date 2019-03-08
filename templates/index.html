@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Counter</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            position: relative;
+            top: 10%;
+            text-align: center;
+        }
+        .centerbutton {
+            background-color: lightblue;
+            
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Counter</h1>
+    <h2>Page has been visited {{ session['num_visits'] }} times</h2>
+    <h2>Page has been incremented {{ session['incremented_by_x'] }} times</h2>
+    <form action='/destroy_session' method="POST">
+        <input class="centerbutton" type="submit" value="Reset">
+    </form>
+    <form action='/increment_counter' method="POST">
+        <input class="centerbutton" type="submit" value="Increase By:">
+        <input type="text" name="increment" value="0">
+    </form>
+</body>
+</html>
